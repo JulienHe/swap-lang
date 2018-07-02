@@ -19,7 +19,7 @@ module.exports = function(str) {
   let arrayForeignCharacters = [],
       firstArrayValue = '';
 
-  for (i=0; i<str.length; i++) {
+  for (let i=0; i<str.length; i++) {
     if (isJapaneseMatch(str[i])) {
       // Start with the first foreign character
       if(firstArrayValue === '') {

@@ -5,5 +5,14 @@
   "main": "index.js",
   "repository": "https://github.com/JulienHe/swap-lang.git",
   "author": "JulienHe <hoshi.graphi@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "node test | tnyan",
+    "bench": "node perf/perf.js"
+  },
+  "devDependencies": {
+    "tap-nyan": "^1.1.0",
+    "tape": "*"
+  },
+  "homepage": "https://github.com/JulienHe/swap-lang#readme"
 }
