@@ -34,4 +34,4 @@ Hello world! <span>مرحبا بالعالم</span>
 
 ## To-do
 
--[ ] Add more language
+- [ ] Add more language
