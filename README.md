@@ -29,9 +29,10 @@ The basic usage uses Japanese (Katakana, Hiragana, Kanji). If you need an other 
 const defaultUsage = swapLang('Hello world! مرحبا بالعالم', {lang: 'ar'});
 
 // Output
-Hello world! <span>مرحبا بالعالم</span>
+Hello world! <span>مرحبا</span> <span>بالعالم</span>
 ```
 
 ## To-do
 
-- [ ] Add more language
+- [ ] More languages
+- [ ] More tests
