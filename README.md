@@ -28,11 +28,20 @@ The basic usage uses Japanese (Katakana, Hiragana, Kanji). If you need an other 
 
 
 ### Extended usage
+If you want to use a different tag.
 ```
 const defaultUsage = swapLang('Hello world! مرحبا بالعالم', {lang: 'ar'});
 
 // Output
 Hello world! <span>مرحبا</span> <span>بالعالم</span>
+```
+
+If you want to use a different tag.
+```
+const defaultUsage = swapLang('Hello world! こんにちは世界', {tag: 'div'});
+
+// Output
+Hello world! <div>こんにちは世界</div>
 ```
 
 ## Supported Languages
@@ -60,7 +69,7 @@ Hello world! <span>مرحبا</span> <span>بالعالم</span>
 | {'tl'}        | Tagalog         |
 | {'zh'}        | Chinese         |
 
-## To-do
-
-- [ ] More languages
-- [ ] More tests
+## Test
+```
+yarn run test
+```

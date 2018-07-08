@@ -88,3 +88,12 @@
       assert.strictEqual(swapLang('Hello world! สวัสดีชาวโลก!', {lang: 'th'}), 'Hello world! <span>สวัสดีชาวโลก</span>!');
       assert.strictEqual(swapLang('Hello สวัสดีชาวโลก world!', {lang: 'th'}), 'Hello <span>สวัสดีชาวโลก</span> world!');
      });
+
+     test('other tags', function (assert) {
+      assert.plan(3);
+
+      // DIV
+      assert.strictEqual(swapLang('Hello world! こんにちは世界', {tag: 'div'}), 'Hello world! <div>こんにちは世界</div>');
+      assert.strictEqual(swapLang('こんにちは世界 Hello world!', {tag: 'div'}), '<div>こんにちは世界</div> Hello world!');
+      assert.strictEqual(swapLang('H こ E ん L に L ち O は', {tag: 'div'}), 'H <div>こ</div> E <div>ん</div> L <div>に</div> L <div>ち</div> O <div>は</div>');
+    });
