@@ -32,6 +32,31 @@ const defaultUsage = swapLang('Hello world! مرحبا بالعالم', {lang: '
 Hello world! <span>مرحبا</span> <span>بالعالم</span>
 ```
 
+## Supported Languages
+| Code          | Language        |
+| ------------- |----------------:|
+| {'ar'}        | Arabic          |
+| {'bn'}        | Bengali         |
+| {'bo'}        | Tibetan         |
+| {'el'}        | Greek & Coptic  |
+| {'gu'}        | Gujarati        |
+| {'he'}        | Hebrew          |
+| {'hy'}        | Armenian        |
+| {'ja'}        | Japanese        |
+| {'ka'}        | Georgian        |
+| {'km'}        | Khmer           |
+| {'kn'}        | Kannada         |
+| {'ko'}        | Korean          |
+| {'my'}        | Birman          |
+| {'ml'}        | Malayalam       |
+| {'or'}        | Oriya           |
+| {'sr-cy'}     | Cyrillic        |
+| {'ta'}        | Tamil           |
+| {'te'}        | Telugu          |
+| {'th'}        | Thai            |
+| {'tl'}        | Tagalog         |
+| {'zh'}        | Chinese         |
+
 ## To-do
 
 - [ ] More languages

@@ -18,7 +18,73 @@
      });
      
      test('other languages', function (assert) {
-       assert.plan(2);
-       assert.strictEqual(swapLang('Hello world! مرحبا بالعالم', {lang: 'ar'}), 'Hello world! <span>مرحبا</span> <span>بالعالم</span>');
-       assert.strictEqual(swapLang('Hello مرحبا world! بالعالم', {lang: 'ar'}), 'Hello <span>مرحبا</span> world! <span>بالعالم</span>');
+      assert.plan(34);
+       
+      // Arabic
+      assert.strictEqual(swapLang('Hello world! مرحبا بالعالم', {lang: 'ar'}), 'Hello world! <span>مرحبا</span> <span>بالعالم</span>');
+      assert.strictEqual(swapLang('Hello مرحبا world! بالعالم', {lang: 'ar'}), 'Hello <span>مرحبا</span> world! <span>بالعالم</span>');
+      
+      // Korean
+      assert.strictEqual(swapLang('Hello world! 안녕하세요!', {lang: 'ko'}), 'Hello world! <span>안녕하세요</span>!');
+      assert.strictEqual(swapLang('Hello 여보세요 world! 세계', {lang: 'ko'}), 'Hello <span>여보세요</span> world! <span>세계</span>');
+      
+      // Chinese
+      assert.strictEqual(swapLang('Hello world! 你好，世界！', {lang: 'zh'}), 'Hello world! <span>你好</span>，<span>世界</span>！');
+      assert.strictEqual(swapLang('Hello 你好 world! 世界！', {lang: 'zh'}), 'Hello <span>你好</span> world! <span>世界</span>！');
+      
+      // Bengali
+      assert.strictEqual(swapLang('Hello world! ওহে বিশ্ব!', {lang: 'bn'}), 'Hello world! <span>ওহে</span> <span>বিশ্ব</span>!');
+      assert.strictEqual(swapLang('Hello ওহে world! বিশ্ব!', {lang: 'bn'}), 'Hello <span>ওহে</span> world! <span>বিশ্ব</span>!');
+      
+      // Greek
+      assert.strictEqual(swapLang('Hello world! Γειά σου Κόσμε!', {lang: 'el'}), 'Hello world! <span>Γειά</span> <span>σου</span> <span>Κόσμε</span>!');
+      assert.strictEqual(swapLang('Hello Χαίρετε world! κόσμος!', {lang: 'el'}), 'Hello <span>Χαίρετε</span> world! <span>κόσμος</span>!');
+      
+      // Gujarati
+      assert.strictEqual(swapLang('Hello world! હેલો વર્લ્ડ!', {lang: 'gu'}), 'Hello world! <span>હેલો</span> <span>વર્લ્ડ</span>!');
+      assert.strictEqual(swapLang('Hello હેલ્લો world! દુનિયા!', {lang: 'gu'}), 'Hello <span>હેલ્લો</span> world! <span>દુનિયા</span>!');
+      
+      // Hebrew
+      assert.strictEqual(swapLang('Hello world! שלום עולם!', {lang: 'he'}), 'Hello world! <span>שלום</span> <span>עולם</span>!');
+      assert.strictEqual(swapLang('Hello שלום world! עוֹלָם!', {lang: 'he'}), 'Hello <span>שלום</span> world! <span>עוֹלָם</span>!');
+      
+      // Armenian
+      assert.strictEqual(swapLang('Hello world! Բարեւ աշխարհ!', {lang: 'hy'}), 'Hello world! <span>Բարեւ</span> <span>աշխարհ</span>!');
+      assert.strictEqual(swapLang('Hello Բարեւ world! աշխարհը!', {lang: 'hy'}), 'Hello <span>Բարեւ</span> world! <span>աշխարհը</span>!');
+
+      // Japanese
+      assert.strictEqual(swapLang('Hello world! こんにちは世界', {lang: 'ja'}), 'Hello world! <span>こんにちは世界</span>');
+      assert.strictEqual(swapLang('こんにちは世界 Hello world!', {lang: 'ja'}), '<span>こんにちは世界</span> Hello world!');
+      
+      // Georgian
+      assert.strictEqual(swapLang('Hello world! გამარჯობა მსოფლიო!', {lang: 'ka'}), 'Hello world! <span>გამარჯობა</span> <span>მსოფლიო</span>!');
+      assert.strictEqual(swapLang('Hello გამარჯობა world! მსოფლიო!', {lang: 'ka'}), 'Hello <span>გამარჯობა</span> world! <span>მსოფლიო</span>!');
+
+      // Khmer
+      assert.strictEqual(swapLang('Hello world! សួស្តី​ពិភពលោក', {lang: 'km'}), 'Hello world! <span>សួស្តី</span>​<span>ពិភពលោក</span>');
+      assert.strictEqual(swapLang('សួស្តី​ពិភពលោក Hello world!', {lang: 'km'}), '<span>សួស្តី</span>​<span>ពិភពលោក</span> Hello world!');
+      
+      // Kannada
+      assert.strictEqual(swapLang('Hello world! ಹಲೋ ವರ್ಲ್ಡ್!', {lang: 'kn'}), 'Hello world! <span>ಹಲೋ</span> <span>ವರ್ಲ್ಡ್</span>!');
+      assert.strictEqual(swapLang('Hello ಹಲೋ world ಜಗತ್ತು!', {lang: 'kn'}), 'Hello <span>ಹಲೋ</span> world <span>ಜಗತ್ತು</span>!');
+      
+      // Birman - Myanmar (Burmese)
+      assert.strictEqual(swapLang('Hello world! မင်္ဂလာပါကမ္ဘာလောက!', {lang: 'my'}), 'Hello world! <span>မင်္ဂလာပါကမ္ဘာလောက</span>!');
+      assert.strictEqual(swapLang('Hello ဟယ်လို world ကမ္ဘာကြီးကို!', {lang: 'my'}), 'Hello <span>ဟယ်လို</span> world <span>ကမ္ဘာကြီးကို</span>!');
+      
+      // Malayalam
+      assert.strictEqual(swapLang('Hello world! ഹലോ വേൾഡ്!', {lang: 'ml'}), 'Hello world! <span>ഹലോ</span> <span>വേൾഡ്</span>!');
+      assert.strictEqual(swapLang('Hello ഹലോ world ലോകം!', {lang: 'ml'}), 'Hello <span>ഹലോ</span> world <span>ലോകം</span>!');
+      
+      // Tamil
+      assert.strictEqual(swapLang('Hello world! ஹலோ உலகம்!', {lang: 'ta'}), 'Hello world! <span>ஹலோ</span> <span>உலகம்</span>!');
+      assert.strictEqual(swapLang('Hello வணக்கம் world உலகம்!', {lang: 'ta'}), 'Hello <span>வணக்கம்</span> world <span>உலகம்</span>!');
+      
+      // Telugu
+      assert.strictEqual(swapLang('Hello world! హలో వరల్డ్!', {lang: 'te'}), 'Hello world! <span>హలో</span> <span>వరల్డ్</span>!');
+      assert.strictEqual(swapLang('Hello హలో world ప్రపంచం!', {lang: 'te'}), 'Hello <span>హలో</span> world <span>ప్రపంచం</span>!');
+      
+      // Thai
+      assert.strictEqual(swapLang('Hello world! สวัสดีชาวโลก!', {lang: 'th'}), 'Hello world! <span>สวัสดีชาวโลก</span>!');
+      assert.strictEqual(swapLang('Hello สวัสดีชาวโลก world!', {lang: 'th'}), 'Hello <span>สวัสดีชาวโลก</span> world!');
      });
