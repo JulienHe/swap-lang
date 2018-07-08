@@ -1,6 +1,6 @@
 {
   "name": "swap-lang",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Swap special character",
   "main": "index.js",
   "repository": "https://github.com/JulienHe/swap-lang.git",
