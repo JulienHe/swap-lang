@@ -15,5 +15,14 @@
     "tape": "*"
   },
   "homepage": "https://github.com/JulienHe/swap-lang#readme",
-  "keywords": ["lang", "i18n", "font", "typography", "split", "iso", "unicode", "tools"]
+  "keywords": [
+    "lang",
+    "i18n",
+    "font",
+    "typography",
+    "split",
+    "iso",
+    "unicode",
+    "tools"
+  ]
 }
