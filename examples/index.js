@@ -8,6 +8,10 @@ console.log(defaultUsage);
 const paramUsage = swapLang('Hello world! こんにちは世界', {tag: 'div'});
 console.log(paramUsage);
 
+// Change the tag
+const classChange = swapLang('Hello world! こんにちは世界', {class: 'ja'});
+console.log(classChange);
+
 // Arabic example
 const arabicUsage = swapLang('Hello world! مرحبا بالعالم', {lang: 'ar'});
 console.log(arabicUsage);

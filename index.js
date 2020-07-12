@@ -22,7 +22,8 @@ module.exports = function(str, params) {
   // Japanese as language & Span as tag
   let config = {
     lang: 'ja',
-    tag: 'span'
+    tag: 'span',
+    class: ''
   };
 
   let arrayForeignCharacters = [], firstArrayValue = '', regex = langs[config.lang];
@@ -38,6 +39,7 @@ module.exports = function(str, params) {
       return false;
     }
     config.tag = params.tag ? params.tag : config.tag;
+    config.class = params.class ? params.class : config.class;
   }
 
   // Make sur the string is a Regex
@@ -67,8 +69,8 @@ module.exports = function(str, params) {
   // This will make our indexes clean
   arrayForeignCharacters.reverse();
   for (let index = 0; index < arrayForeignCharacters.length; index++) {
-   str = str.splice(arrayForeignCharacters[index][1], 0, '</'+ config.tag +'>');
-   str = str.splice(arrayForeignCharacters[index][0], 0, '<'+ config.tag +'>');
+   str = str.splice(arrayForeignCharacters[index][1], 0, `</${config.tag}>`);
+   str = str.splice(arrayForeignCharacters[index][0], 0, `<${config.tag}${config.class != '' ? ` class="${config.class}"` : '' }>`);
   }
 
   return str;
