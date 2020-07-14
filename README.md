@@ -36,13 +36,17 @@ const defaultUsage = swapLang('Hello world! مرحبا بالعالم', {lang: '
 Hello world! <span>مرحبا</span> <span>بالعالم</span>
 ```
 
-If you want to use a different tag.
+If you want to use a class name
 ```
-const defaultUsage = swapLang('Hello world! こんにちは世界', {tag: 'div'});
+const defaultUsage = swapLang('Hello world! こんにちは世界', {class: 'ja'});
 
 // Output
-Hello world! <div>こんにちは世界</div>
+Hello world! <span class="ja">こんにちは世界</span>
 ```
+
+The basic usage uses Japanese (Katakana, Hiragana, Kanji). If you need an other language, use the example with parameters.
+
+
 
 ## Supported Languages
 | Code          | Language        |
